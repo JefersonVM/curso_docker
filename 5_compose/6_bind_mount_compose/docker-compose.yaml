@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 
 services:
   db:
@@ -7,22 +7,22 @@ services:
     env_file:
       - ./config/db.env
     ports:
-      - "3306:3306"
+      - "3309:3306"
     networks:
       - dockercompose
     volumes:
       - ./mysql/schema.sql:/docker-entrypoint-initdb.d/init.sql
-  
+
   flask:
-    depends_on: 
+    depends_on:
       - db
     build: ./flask/
     ports:
       - "5000:5000"
     restart: always
     volumes:
-      - "H:\\20_DOCKER\\arquivos\\5_compose\\6_bind_mount_compose\\flask:/app"
-    networks: 
+      - "/media/jeferson/hd_jeferson/curso_docker/5_compose/6_bind_mount_compose/flask:/appclear"
+    networks:
       - dockercompose
 
 networks:

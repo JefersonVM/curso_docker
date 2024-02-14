@@ -1,11 +1,11 @@
 FROM python:3
 
 RUN apt-get update -y && \
-  apt-get install -y python-pip python-dev
+  apt-get install -y python3-pip python3-dev libpq-dev
 
 WORKDIR /app
 
-RUN pip install Flask requests flask_mysqldb
+RUN pip install Flask requests psycopg2-binary
 
 COPY . .
 
