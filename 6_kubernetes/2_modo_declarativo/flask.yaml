@@ -16,4 +16,4 @@ spec:
         - name: flask
         # Código antigo do curso
         # image: matheusbattisti/flask-kub-projeto:5
-          image: matheusbattisti/flask-kub-projeto
+          image: jefersonvm/flask-kub-projeto:v0.2
